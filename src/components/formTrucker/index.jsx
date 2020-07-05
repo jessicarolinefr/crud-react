@@ -7,7 +7,13 @@ import PropTypes from "prop-types";
 import BackButton from "../backButton";
 import Div from "../div";
 
-const FormTrucker = ({ onSubmit, onInputChange, onDelete, values = {} }) => {
+const FormTrucker = ({
+  onSubmit,
+  onInputChange,
+  onInactive,
+  onActive,
+  values = {},
+}) => {
   return (
     <div>
       <Form onSubmit={onSubmit} method="POST">
@@ -57,14 +63,23 @@ const FormTrucker = ({ onSubmit, onInputChange, onDelete, values = {} }) => {
         >
           CPF:
         </FormField>
+        <div>Status: {values.status === 0 ? "Inativo" : "Ativo"}</div>
         <Div>
           <FormButton type="submit">Salvar</FormButton>
-          {onDelete && (
+          {onInactive && (
             <FormButton
               style={{ backgroundColor: "#FF5733" }}
-              onClick={onDelete}
+              onClick={onInactive}
             >
-              Deletar
+              Inativar
+            </FormButton>
+          )}
+          {onActive && (
+            <FormButton
+              style={{ backgroundColor: "#2980B9" }}
+              onClick={onActive}
+            >
+              Ativar
             </FormButton>
           )}
         </Div>
@@ -81,7 +96,8 @@ const FormTrucker = ({ onSubmit, onInputChange, onDelete, values = {} }) => {
 FormTrucker.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
-  onDelete: PropTypes.func,
+  onInactive: PropTypes.func,
+  onActive: PropTypes.func,
   values: PropTypes.shape({
     name: PropTypes.string,
     phone: PropTypes.string,

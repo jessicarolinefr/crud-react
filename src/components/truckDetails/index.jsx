@@ -64,7 +64,7 @@ const TruckDetails = ({ trucker }) => {
 };
 
 TruckDetails.propTypes = {
-  details: PropTypes.number,
+  trucker: PropTypes.string,
 };
 
 export default TruckDetails;

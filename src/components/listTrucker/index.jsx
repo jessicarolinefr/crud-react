@@ -33,7 +33,6 @@ const ListTrucker = () => {
     TruckerService.getAll()
       .then((response) => {
         setTruckers(response.data);
-        console.error(response.data);
       })
       .catch((e) => {
         console.error(e);
@@ -41,10 +40,9 @@ const ListTrucker = () => {
   };
 
   const onSearchIconClick = () => {
-    TruckerService.onSearchIconClick(searchTitle)
+    TruckerService.findByName(searchTitle)
       .then((response) => {
         setTruckers(response.data);
-        console.error(response.data);
       })
       .catch((e) => {
         console.error(e);

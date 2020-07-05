@@ -4,23 +4,23 @@ import PropTypes from "prop-types";
 import Icon from "../icon";
 
 const Link = styled.a`
-  color: #ffffff;
-  padding: 10px 0;
   background-color: #298464;
   border-radius: 58px;
+  bottom: 30px;
+  box-sizing: border-box;
+  color: #ffffff;
   display: flex;
   justify-content: center;
-  text-decoration: none;
+  padding: 10px 0;
   position: fixed;
-  bottom: 30px;
   right: 0;
-  box-sizing: border-box;
+  text-decoration: none;
   width: 25%;
 
   @media (max-width: 768px) {
-    width: 100%;
     bottom: 30px;
     box-sizing: border-box;
+    width: 100%;
   }
 `;
 

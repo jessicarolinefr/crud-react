@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
-import AddTrucker from "./components/trucker";
+import AddTrucker from "./components/addTrucker";
 import List from "./components/listTrucker";
 import Header from "./components/header";
 import EditTrucker from "./components/editTrucker";

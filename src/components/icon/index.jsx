@@ -3,18 +3,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const BaseIcon = styled.i`
-  vertical-align: middle;
-  margin-right: 0.5rem;
+  display: inline-block;
+  direction: ltr;
   font-family: "Material Icons";
-  font-weight: normal;
   font-style: normal;
+  font-weight: normal;
   line-height: 1.2;
   letter-spacing: normal;
+  margin-right: 0.5rem;
+  vertical-align: middle;
   text-transform: none;
-  display: inline-block;
   white-space: nowrap;
   word-wrap: normal;
-  direction: ltr;
 `;
 
 const Icon = ({ children, ...props }) => {

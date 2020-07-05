@@ -10,6 +10,7 @@ const Div = styled.div`
   margin: 10px 0;
   position: relative;
   width: 25%;
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -27,12 +28,15 @@ const SearchInput = styled(Input)`
   width: 100%;
   border-radius: 58px;
   border-color: #2d2d2d;
+  cursor: pointer;
 `;
 
 const Search = ({ value, onClick, onChange }) => (
   <Div>
-    <SearchInput onChange={onChange} value={value} />
-    <SearchIcon onClick={onClick}>search</SearchIcon>
+    <SearchInput data-testid="search-input" onChange={onChange} value={value} />
+    <SearchIcon data-testid="search-icon" onClick={onClick}>
+      search
+    </SearchIcon>
   </Div>
 );
 

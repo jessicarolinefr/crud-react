@@ -13,7 +13,7 @@ const StyleInput = styled(InputMask)`
 const Input = ({ mask, ...props }) => <StyleInput mask={mask} {...props} />;
 
 Input.propTypes = {
-  mask: PropTypes.func,
+  mask: PropTypes.string,
 };
 
 export default Input;

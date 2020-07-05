@@ -20,7 +20,7 @@ const remove = (id) => {
   return http.delete(`/trucker/${id}`);
 };
 
-const onSearchIconClick = (name) => {
+const findByName = (name) => {
   return http.get(`/trucker?name=${name}`);
 };
 
@@ -30,5 +30,5 @@ export default {
   create,
   update,
   remove,
-  onSearchIconClick,
+  findByName,
 };
