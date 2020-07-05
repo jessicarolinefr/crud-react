@@ -1,0 +1,40 @@
+{
+  "trucker": [
+    {
+      "name": "PEDRO REIS ROCHA",
+      "phone": "69577526795",
+      "birthdate": "05071992",
+      "cnh": "1",
+      "cnhCategory": "1",
+      "cpf": "08995555947",
+      "id": 1
+    },
+    {
+      "name": "Igor Thales Oliveira",
+      "phone": "1627421008",
+      "birthdate": "08111961",
+      "cnh": "15204001630",
+      "cnhCategory": "D",
+      "cpf": "430.188.963-94",
+      "id": 2
+    },
+    {
+      "name": "Kauê Juan Arthur da Rocha",
+      "phone": "8337547089",
+      "birthdate": "07031978",
+      "cnh": "15341260704",
+      "cnhCategory": "A",
+      "cpf": "685.487.342-80",
+      "id": 3
+    },
+    {
+      "name": "Vanessa Jennifer Julia Figueiredo",
+      "phone": "+55 (97) 99838-5916",
+      "birthdate": "25/05/1951",
+      "cnh": "39156606701",
+      "cnhCategory": "E",
+      "cpf": "245.319.286/87",
+      "id": 4
+    }
+  ]
+}
