@@ -12,7 +12,7 @@ Para rodar esse projeto, basta seguir os seguintes passos:
 
 Para subir o banco, basta subir o json server:
 
-`json-server --port 3001 --watch db.json`
+`npx json-server --port 3001 --watch db.json`
 
 Acesse o link [http://localhost:3000](http://localhost:3000) para visualizar o projeto e [http://localhost:3001/trucker](http://localhost:3001/trucker) para visualizar o json que representa o banco.
 
