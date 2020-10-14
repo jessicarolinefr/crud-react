@@ -6,6 +6,7 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: 200px auto;
   padding: 5px;
+  width: 100%;
 
   @media (max-width: 768px) {
     margin: 0 auto;
@@ -20,51 +21,45 @@ const GridItem = styled.div`
   padding: 5px;
 `;
 
-const TruckDetails = ({ trucker }) => {
+const ScheduleDetails = ({ schedule }) => {
   return (
     <GridContainer>
       <GridItem>
         <strong>Nome: </strong>
       </GridItem>
       <GridItem>
-        <div> {trucker.name}</div>
+        <div> {schedule.name}</div>
       </GridItem>
       <GridItem>
         <strong>Telefone: </strong>
       </GridItem>
       <GridItem>
-        <div> {trucker.phone}</div>
+        <div> {schedule.phone}</div>
       </GridItem>
       <GridItem>
-        <strong>Data de nascimento: </strong>
+        <strong>E-mail: </strong>
       </GridItem>
       <GridItem>
-        <div> {trucker.birthdate}</div>
+        <div> {schedule.email}</div>
       </GridItem>
       <GridItem>
-        <strong>CNH: </strong>
+        <strong>Data: </strong>
       </GridItem>
       <GridItem>
-        <div> {trucker.cnh}</div>
+        <div> {schedule.date}</div>
       </GridItem>
       <GridItem>
-        <strong>Categoria da CNH: </strong>
+        <strong>Horário: </strong>
       </GridItem>
       <GridItem>
-        <div> {trucker.cnhCategory}</div>
-      </GridItem>
-      <GridItem>
-        <strong>CPF: </strong>
-      </GridItem>
-      <GridItem>
-        <div> {trucker.cpf}</div>
+        <div> {schedule.time}</div>
       </GridItem>
     </GridContainer>
   );
 };
 
-TruckDetails.propTypes = {
-  trucker: PropTypes.string,
+ScheduleDetails.propTypes = {
+  schedule: PropTypes.string,
 };
 
-export default TruckDetails;
+export default ScheduleDetails;

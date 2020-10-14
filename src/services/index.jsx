@@ -1,27 +1,19 @@
 import http from "../http-common";
 
 const getAll = () => {
-  return http.get("/trucker");
+  return http.get("/schedules");
 };
 
 const get = (id) => {
-  return http.get(`/trucker/${id}`);
+  return http.get(`/schedules/${id}`);
 };
 
 const create = (data) => {
-  return http.post("/trucker", data);
+  return http.post("/schedules", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/trucker/${id}`, data);
-};
-
-const remove = (id) => {
-  return http.delete(`/trucker/${id}`);
-};
-
-const findByName = (name) => {
-  return http.get(`/trucker?name=${name}`);
+  return http.put(`/schedules/${id}`, data);
 };
 
 export default {
@@ -29,6 +21,4 @@ export default {
   get,
   create,
   update,
-  remove,
-  findByName,
 };

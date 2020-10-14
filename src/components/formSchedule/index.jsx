@@ -6,16 +6,19 @@ import FormButton from "../formButton";
 import PropTypes from "prop-types";
 import BackButton from "../backButton";
 import Div from "../div";
+import Select from "../select";
 
-const FormTrucker = ({
+const FormSchedule = ({
   onSubmit,
   onInputChange,
   onInactive,
   onActive,
   values = {},
+  dates,
+  times,
 }) => {
   return (
-    <div>
+    <>
       <Form onSubmit={onSubmit} method="POST">
         <FormField
           value={values.name || ""}
@@ -33,48 +36,50 @@ const FormTrucker = ({
           Telefone:
         </FormField>
         <FormField
-          value={values.birthdate || ""}
-          mask="99/99/9999"
-          name="birthdate"
+          value={values.email || ""}
+          name="email"
           onChange={onInputChange}
         >
-          Data de Nascimento:
+          E-mail:
         </FormField>
-        <FormField
-          value={values.cnh || ""}
-          mask="99999999999"
-          name="cnh"
-          onChange={onInputChange}
-        >
-          CNH:
-        </FormField>
-        <FormField
-          value={values.cnhCategory || ""}
-          name="cnhCategory"
-          onChange={onInputChange}
-        >
-          Tipo de CNH:
-        </FormField>
-        <FormField
-          value={values.cpf || ""}
-          mask="999.999.999/99"
-          name="cpf"
-          onChange={onInputChange}
-        >
-          CPF:
-        </FormField>
-        <div>Status: {values.status === 0 ? "Inativo" : "Ativo"}</div>
+        <Select name="date" value={values.date || ""} onChange={onInputChange}>
+          <option>Que dia gostaria de realizar sua consulta?</option>
+          {dates.map((date) => {
+            const formattedDate = date.toFormat("dd/MM/yyyy");
+            return (
+              <option key={date} value={formattedDate}>
+                {formattedDate}
+              </option>
+            );
+          })}
+        </Select>
+        {values.date && (
+          <Select
+            name="time"
+            value={values.time || ""}
+            onChange={onInputChange}
+          >
+            <option>Em que horário?</option>
+            {times.map((time) => (
+              <option value={time} key={time}>
+                {time}h
+              </option>
+            ))}
+          </Select>
+        )}
+
+        <div>Status: {values.status === 0 ? "Cancelado" : "Ativo"}</div>
         <Div>
           <FormButton type="submit">Salvar</FormButton>
-          {onInactive && (
+          {values.status !== 0 && onInactive && (
             <FormButton
               style={{ backgroundColor: "#FF5733" }}
               onClick={onInactive}
             >
-              Inativar
+              Cancelar
             </FormButton>
           )}
-          {onActive && (
+          {values.status === 0 && onActive && (
             <FormButton
               style={{ backgroundColor: "#2980B9" }}
               onClick={onActive}
@@ -89,22 +94,23 @@ const FormTrucker = ({
           Voltar
         </Link>
       </Div>
-    </div>
+    </>
   );
 };
 
-FormTrucker.propTypes = {
+FormSchedule.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onInactive: PropTypes.func,
   onActive: PropTypes.func,
+  onHandleDateChange: PropTypes.func,
+  onHandleTimeChange: PropTypes.func,
   values: PropTypes.shape({
     name: PropTypes.string,
     phone: PropTypes.string,
-    birthdate: PropTypes.string,
-    cnh: PropTypes.string,
-    cnhCategory: PropTypes.string,
-    cpf: PropTypes.string,
+    email: PropTypes.string,
   }),
+  dates: PropTypes.array,
+  times: PropTypes.array,
 };
-export default FormTrucker;
+export default FormSchedule;

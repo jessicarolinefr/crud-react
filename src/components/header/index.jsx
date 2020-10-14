@@ -4,7 +4,7 @@ import Image from "../image";
 
 const BaseHeader = styled.header`
   align-items: center;
-  background-color: #face48;
+  background-color: #fef8ed;
   color: #2d2d2d;
   display: flex;
   font-family: arial, sans-serif;
@@ -20,10 +20,9 @@ const Header = () => (
   <BaseHeader>
     <Image
       className="logo"
-      src="https://www.truckpad.com.br/uploads/2020/01/5df17dc1-truckpad-app-icon.png"
-      alt=""
+      src="https://cuidas.com.br/wp-content/themes/cuidas/img/logo.svg"
+      alt="Logotipo Cuidas"
     />
-    Desafio Truckpad
   </BaseHeader>
 );
 

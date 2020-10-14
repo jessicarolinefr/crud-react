@@ -1,25 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-
-import AddTrucker from "./components/addTrucker";
-import List from "./components/listTrucker";
+import Schedule from "./pages/addSchedule";
 import Header from "./components/header";
-import EditTrucker from "./components/editTrucker";
+import Home from "./pages/home";
+import Admin from "./pages/admin";
 
 function App() {
   return (
     <Router>
       <Header />
-      <div className="container">
-        <div>
-          <Switch>
-            <Route exact path={["/", "/truckers"]} component={List} />
-            <Route exact path="/add" component={AddTrucker} />
-            <Route path="/edit/trucker/:id" component={EditTrucker} />
-          </Switch>
-        </div>
-      </div>
+      <Switch>
+        <Route exact path={["/", "/schedules"]} component={Home} />
+        <Route exact path="/admin" component={Admin} />
+        <Route exact path="/patient" component={Schedule} />
+        <Route path="/edit/schedules/:id" component={Schedule} />
+      </Switch>
     </Router>
   );
 }

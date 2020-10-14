@@ -6,16 +6,14 @@ import Icon from "../icon";
 const Link = styled.a`
   background-color: #298464;
   border-radius: 58px;
-  bottom: 30px;
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
   justify-content: center;
   padding: 10px 0;
-  position: fixed;
   right: 0;
   text-decoration: none;
-  width: 25%;
+  width: 100%;
 
   @media (max-width: 768px) {
     bottom: 30px;

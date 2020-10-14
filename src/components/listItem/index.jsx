@@ -9,11 +9,7 @@ const ListItem = styled.li`
   padding: 5px;
 
   @media (max-width: 768px) {
-    width: 80%;
-  }
-
-  @media (max-width: 780px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
